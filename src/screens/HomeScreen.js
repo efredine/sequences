@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import SequenceList from "../components/SequenceList";
 
 class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Sequences',
+  };
   render() {
     return (
       <SequenceList

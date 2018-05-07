@@ -11,9 +11,19 @@ const RootStack = StackNavigator(
     Details: {
       screen: DetailsScreen,
     },
+
   },
   {
     initialRouteName: 'Home',
+    cardStyle: {
+      backgroundColor: '#f7f7f7',
+    },
+    navigationOptions: {
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize: 20,
+      },
+    },
   }
 );
 
@@ -22,28 +32,3 @@ export default class App extends React.Component {
     return <RootStack/>;
   }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-//   dragons: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     color: '#c92f30',
-//     marginTop: 10,
-//   },
-// });

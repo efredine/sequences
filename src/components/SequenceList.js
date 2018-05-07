@@ -9,8 +9,8 @@ class SequenceSummary extends Component {
   };
   render() {
     return(
-      <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
-        <View style={styles.button}>
+      <TouchableHighlight onPress={this._onPressButton} underlayColor="#CCC">
+        <View style={styles.row}>
           <Text style={styles.item}>{this.props.item.name}</Text>
         </View>
       </TouchableHighlight>
@@ -21,12 +21,14 @@ class SequenceSummary extends Component {
 class SequenceList extends Component {
   render() {
     return (
-      <View style={styles.container}>
         <FlatList
+          style={styles.container}
           data={ this.props.data }
+          ItemSeparatorComponent={() => (
+            <View style={styles.separator} />
+            )}
           renderItem={({item}) => <SequenceSummary item={item} navigation={this.props.navigation}/>}
         />
-      </View>
     );
   }
 }
@@ -34,13 +36,18 @@ class SequenceList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 22
+    paddingTop: 22,
+    borderTopWidth: 0,
   },
-  button: {
-    marginBottom: 10,
-    width: 260,
-    alignItems: 'center',
-    backgroundColor: '#2196F3'
+  separator: {
+    height: 1,
+    backgroundColor: "#CED0CE",
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  row: {
+    paddingBottom: 20,
+    marginLeft: 10,
   },
   item: {
     padding: 10,
